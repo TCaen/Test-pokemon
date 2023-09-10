@@ -1,0 +1,17 @@
+<h1><%= @pokemon.name %></h1>
+<h2>  <%= current_user.email %> euro</h2>
+<p>portefeuille :  <%= current_user.balance %> euro</p>
+
+<p><strong>Poids :</strong> <%= @pokemon.weight %> kg</p>
+<p><strong>Hauteur :</strong> <%= @pokemon.height %> m</p>
+<p><strong>Prix :</strong> <%= @pokemon.price %> $</p>
+
+<% if current_user.balance >= @pokemon.price %>
+ <p>Acheter!</p>
+ 
+<% else %>
+  <p>Vous n'avez pas assez d'argent pour ce Pokémon.</p>
+ <%= link_to 'Ajouter de l"argent', add_user_path(current_user) %><br>
+<% end %>
+
+<%= link_to 'Retour à la liste des Pokémon', pokemons_path %>

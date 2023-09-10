@@ -1,0 +1,16 @@
+<h1>Mes Pokémon</h1>
+
+<ul>
+  <% @user_pokemons.each do |pokemon| %>
+    <li>
+      <strong>Nom du Pokémon :</strong> <%= pokemon.name %><br>
+      <strong>Image :</strong> <%= pokemon.imagepath %><br>
+      <strong>Poids :</strong> <%= pokemon.weight %> kg<br>
+      <strong>Hauteur :</strong> <%= pokemon.height %> m<br>
+      <strong>Prix :</strong> <%= pokemon.price %> $<br>
+    </li>
+
+    <p>VENDRE CE POKEMON</p>
+     <%= link_to 'retour', root_path %><br>
+  <% end %>
+</ul>

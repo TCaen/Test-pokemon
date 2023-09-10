@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ajouter de l'argent</title>
+</head>
+<body>
+
+<h1>Bienvenue, <%= current_user.email %> !</h1>
+<p>portefeuille :  <%= current_user.balance %> euro</p>
+<%= form_for(current_user, url: update_balance_user_path) do |f| %>
+  <div class="field">
+    <%= f.label :amount, "Montant à ajouter" %>
+  <%= number_field_tag :amount, nil, step: 1 %>
+  
+  </div>
+  <div class="actions">
+    <%= f.submit "Ajouter de l'argent" %>
+
+  </div>
+<% end %>
+ <%= link_to 'retour', root_path %><br>
+
+</body>
+</html>
