@@ -12,6 +12,9 @@
 
   <%= link_to 'Ajouter de l"argent', add_user_path(current_user) %><br>
    <%= link_to 'Voir les pokemon', pokemons_path %><br>
+   <%= link_to 'Voir les transaction', transactions_path %><br>
+
+
    <%= link_to 'Mes Pokémon', mypokemons_user_path(current_user) %>
 <p>portefeuille :  <%= current_user.balance %> euro</p>
 

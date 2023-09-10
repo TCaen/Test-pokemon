@@ -4,13 +4,15 @@
   <% @user_pokemons.each do |pokemon| %>
     <li>
       <strong>Nom du Pokémon :</strong> <%= pokemon.name %><br>
-      <strong>Image :</strong> <%= pokemon.imagepath %><br>
+        <strong>Image :</strong> <%= image_tag(pokemon.imagepath, alt: pokemon.name, width: 100) %><br>
       <strong>Poids :</strong> <%= pokemon.weight %> kg<br>
       <strong>Hauteur :</strong> <%= pokemon.height %> m<br>
       <strong>Prix :</strong> <%= pokemon.price %> $<br>
     </li>
 
+
+   <%= link_to 'Acheter des pokemon', pokemons_path %><br>
     <p>VENDRE CE POKEMON</p>
-     <%= link_to 'retour', root_path %><br>
   <% end %>
 </ul>
+     <%= link_to 'retour', root_path %><br>

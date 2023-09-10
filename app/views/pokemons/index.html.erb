@@ -3,19 +3,14 @@
 <p>portefeuille :  <%= current_user.balance %> euro</p>
 <ul>
   <% @pokemons.each do |pokemon| %>
-    <li>
-      <strong>Nom :</strong> <%= pokemon.name %><br>
-      <%
-=begin%>
- <strong>Image :</strong> <%= image_tag(pokemon.imagepath, alt: pokemon.name, width: 100) %><br> 
-<%
-=end%>
-      
-      <strong>Prix :</strong> <%= pokemon.price %> $
-      <br>
-        <%= link_to 'Voir ce Pokémon', pokemon_path(pokemon) %>
-      <br>
-    </li>
+    <% if pokemon.user_id != current_user.id %>
+      <li>
+        <strong>Nom :</strong> <%= pokemon.name %><br>
+        <strong>Image :</strong> <%= image_tag(pokemon.imagepath, alt: pokemon.name, width: 100) %><br>
+        <strong>Prix :</strong> <%= pokemon.price %> $<br>
+        <%= link_to 'Voir ce Pokémon', pokemon_path(pokemon) %><br>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 

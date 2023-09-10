@@ -1,0 +1,14 @@
+<h1>Toutes</h1>
+
+<ul>
+  <% @transactions.each do |transaction| %>
+    <li>
+      <strong>user id :</strong> <%= transaction.user_id %><br>
+      <strong>previous owner id :</strong> <%= transaction.previous_owner_id %><br>
+      <strong>pokemon id :</strong> <%= transaction.pokemon_id %><br>
+   
+    </li>
+  <% end %>
+</ul>
+
+ <%= link_to 'retour', root_path %><br>

@@ -1,14 +1,20 @@
 <h1><%= @pokemon.name %></h1>
 <h2>  <%= current_user.email %> euro</h2>
 <p>portefeuille :  <%= current_user.balance %> euro</p>
+        <strong>Image :</strong> <%= image_tag(@pokemon.imagepath, alt: @pokemon.name, width: 100) %><br>
 
 <p><strong>Poids :</strong> <%= @pokemon.weight %> kg</p>
 <p><strong>Hauteur :</strong> <%= @pokemon.height %> m</p>
 <p><strong>Prix :</strong> <%= @pokemon.price %> $</p>
 
 <% if current_user.balance >= @pokemon.price %>
- <p>Acheter!</p>
- 
+  
+ <p>il vous restera <%= current_user.balance - @pokemon.price %> euro!</p>
+
+ <%= form_for(@pokemon, url: buy_pokemon_path(@pokemon), method: :post) do |f| %>
+  <%= f.submit "Acheter", class: "btn btn-primary" %>
+<% end %>
+
 <% else %>
   <p>Vous n'avez pas assez d'argent pour ce Pokémon.</p>
  <%= link_to 'Ajouter de l"argent', add_user_path(current_user) %><br>
