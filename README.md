@@ -1,4 +1,2 @@
 # README
-
-Je n'ai malheureusement pas pu m'occuper des transaction ou de la seed.
-j'ai essayer de faire aussi vite que possible
+Ajout de la seed, du systeme d'achat de pokemon, des images de pokemon et des transaction

@@ -9,7 +9,7 @@
 
 <% if current_user.balance >= @pokemon.price %>
   
- <p>il vous restera <%= current_user.balance - @pokemon.price %> euro!</p>
+ <p>il vous restera  <%= current_user.balance - @pokemon.price %> euro!</p>
 
  <%= form_for(@pokemon, url: buy_pokemon_path(@pokemon), method: :post) do |f| %>
   <%= f.submit "Acheter", class: "btn btn-primary" %>
